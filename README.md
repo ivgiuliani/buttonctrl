@@ -41,7 +41,7 @@ void loop() {
 ## Events
 
 - `Click`: the button has been clicked and then released. This is the
-  event you want to check if you want to trigger some action when the
+  event you want to handle if you want to trigger some action when the
   button is clicked.
 - `LongClick`: the button has been pressed for longer than `long_click_ms`.
   Note that a `Click` event will *not* be raised after a long click
