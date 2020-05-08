@@ -48,5 +48,8 @@ void loop() {
   (but `ClickDown` and `ClickUp` will be raised as normal). If you don't
   need to handle long clicks, then you should handle `Click` and `LongClick`
   events in the same way.
+  By default, long clicks will be triggered after the button has been pressed
+  for longer than 1500ms but this duration is configurable (see
+  `examples/longclick`)
 - `ClickDown`: the button has just been pressed down
 - `ClickUp`: the button has just been released
