@@ -4,37 +4,39 @@ Arduino helper library for translating push buttons state into click events
 
 ## Example
 
-    #include <buttonctrl.h>
+```cpp
+#include <buttonctrl.h>
 
-    #define PIN_BUTTON D8
-    ButtonCtrl button = ButtonCtrl(PIN_BUTTON);
+#define PIN_BUTTON D8
+ButtonCtrl button = ButtonCtrl(PIN_BUTTON);
 
-    void setup() {
-      Serial.begin(9600);
-      Serial.setTimeout(2000);
-      while(!Serial) { }
+void setup() {
+  Serial.begin(9600);
+  Serial.setTimeout(2000);
+  while(!Serial) { }
 
-      button.begin();
-    }
+  button.begin();
+}
 
-    void loop() {
-      const ButtonEvent btn_ev = button.handle();
+void loop() {
+  const ButtonEvent btn_ev = button.handle();
 
-      if (btn_ev != None) {
-        Serial.println(ButtonCtrl::str_from_event(btn_ev));
-      }
+  if (btn_ev != None) {
+    Serial.println(ButtonCtrl::str_from_event(btn_ev));
+  }
 
-      switch (btn_ev) {
-        case Click:
-          Serial.println("Clicked!");
-          break;
-        case LongClick:
-          Serial.println("Long click!");
-          break;
-        default:
-          break;
-      }
-    }
+  switch (btn_ev) {
+    case Click:
+      Serial.println("Clicked!");
+      break;
+    case LongClick:
+      Serial.println("Long click!");
+      break;
+    default:
+      break;
+  }
+}
+```
 
 ## Events
 
