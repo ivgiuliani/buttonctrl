@@ -1,0 +1,8 @@
+buttonctrl v0.0.2
+
+* Allow customisation of pressed state (HIGH vs LOW)
+* Allow to configure input pin as pullup
+
+buttonctrl v0.0.1
+
+* Initial release
