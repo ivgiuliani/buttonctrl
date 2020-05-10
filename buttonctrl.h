@@ -30,7 +30,7 @@ public:
    */
   ButtonCtrl(const uint8_t pin,
              const uint16_t long_click_ms = 1500,
-             const uint8_t button_released_signal = HIGH) {
+             const uint8_t button_released_signal = LOW) {
     this->pin = pin;
     this->long_click_ms = long_click_ms;
     this->button_released_signal = button_released_signal;
