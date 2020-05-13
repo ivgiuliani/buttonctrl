@@ -3,7 +3,7 @@
 #define PIN_BUTTON D8
 
 // Register a long click after the button has been pressed for 5 seconds
-ButtonCtrl button = ButtonCtrl(PIN_BUTTON, 5000);
+ButtonCtrl<PIN_BUTTON> button(5000);
 
 void setup() {
   Serial.begin(9600);

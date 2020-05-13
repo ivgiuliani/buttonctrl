@@ -1,11 +1,11 @@
 #include <buttonctrl.h>
    
-// Rotary encoder buttons on a KY-040 are LOW when released and
-// HIGH when pressed, whereas in "normal" push buttons it's the
+// Rotary encoder buttons on a KY-040 are HIGH when released and
+// LOW when pressed, whereas in "normal" push buttons it's the
 // other way around. Whilst the default on a released state is
-// HIGH, we can override it in the initializer so that we can
+// LOW, we can override it in the initializer so that we can
 // use buttonctrl to control the button on rotary encoders.
-ButtonCtrl button = ButtonCtrl(D3, LOW);
+ButtonCtrl<D3, HIGH> button;
 
 void setup() {
   Serial.begin(9600);

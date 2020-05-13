@@ -1,7 +1,7 @@
 #include <buttonctrl.h>
 
 #define PIN_BUTTON D8
-ButtonCtrl button = ButtonCtrl(PIN_BUTTON);
+ButtonCtrl<PIN_BUTTON> button;
 
 void setup() {
   Serial.begin(9600);

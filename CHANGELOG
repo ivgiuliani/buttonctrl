@@ -1,3 +1,8 @@
+buttonctrl v0.0.3
+
+* Pass some input parameters as template arguments as to simplify the default
+  case during initialisation
+
 buttonctrl v0.0.2
 
 * Allow customisation of pressed state (HIGH vs LOW)
