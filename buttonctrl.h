@@ -76,7 +76,7 @@ public:
     }
   }
 
-  static const char *str_from_event(ButtonEvent event) {
+  static const char *str_from_event(const ButtonEvent event) {
     switch (event) {
       case ClickDown:
         return "click_down";
@@ -98,7 +98,7 @@ private:
 
   ButtonEvent current_state = None;
 
-  ButtonEvent emit(ButtonEvent event) {
+  ButtonEvent emit(const ButtonEvent event) {
     if (current_state == event) {
       // return None when state has not changed in between calls
       return None;
