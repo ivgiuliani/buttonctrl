@@ -21,7 +21,7 @@ enum ButtonEvent {
   LongClick = 4,
 };
 
-template <uint8_t PIN,
+template <uint8_t pin,
           uint8_t pin_mode = INPUT,
           uint8_t button_released_signal = LOW>
 class ButtonCtrl {
@@ -35,12 +35,12 @@ public:
 
   void begin() {
     current_state = None;
-    pinMode(PIN, pin_mode);
+    pinMode(pin, pin_mode);
   }
 
   ButtonEvent handle() {
     const long now = millis();
-    const bool is_btn_released = digitalRead(PIN) == button_released_signal;
+    const bool is_btn_released = digitalRead(pin) == button_released_signal;
 
     // We only want to take action right after the button has been
     // released, we don't care about the button state at rest.
@@ -94,7 +94,6 @@ public:
 
 private:
   uint16_t long_click_ms;
-  uint8_t pin;
   uint32_t last_click = 0;
 
   ButtonEvent current_state = None;
