@@ -1,3 +1,7 @@
+buttonctrl v0.0.4
+
+* Change the way `INPUT` vs `INPUT_PULLUP` is configured.
+
 buttonctrl v0.0.3
 
 * Pass some input parameters as template arguments as to simplify the default
