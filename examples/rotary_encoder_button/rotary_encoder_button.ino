@@ -5,16 +5,14 @@
 // other way around. Whilst the default on a released state is
 // LOW, we can override it in the initializer so that we can
 // use buttonctrl to control the button on rotary encoders.
-ButtonCtrl<D3, HIGH> button;
+ButtonCtrl<D3, HIGH, INPUT_PULLUP> button;
 
 void setup() {
   Serial.begin(9600);
   Serial.setTimeout(2000);
   while(!Serial) { }
 
-  // By default, we set the pin as `INPUT`, but by passing `true`
-  // here we instead set it as `INPUT_PULLUP`.
-  button.begin(true);
+  button.begin();
 }
 
 void loop() {

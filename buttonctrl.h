@@ -21,7 +21,9 @@ enum ButtonEvent {
   LongClick = 4,
 };
 
-template <uint8_t PIN, uint8_t button_released_signal = LOW>
+template <uint8_t PIN,
+          uint8_t pin_mode = INPUT,
+          uint8_t button_released_signal = LOW>
 class ButtonCtrl {
 public:
   /**
@@ -31,13 +33,9 @@ public:
     this->long_click_ms = long_click_ms;
   }
 
-  void begin(const bool with_pullup = false) {
+  void begin() {
     current_state = None;
-    if (with_pullup) {
-      pinMode(PIN, INPUT);
-    } else {
-      pinMode(PIN, INPUT_PULLUP);
-    }
+    pinMode(PIN, pin_mode);
   }
 
   ButtonEvent handle() {
