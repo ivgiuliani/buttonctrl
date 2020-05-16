@@ -22,7 +22,7 @@ void loop() {
   const ButtonEvent btn_ev = button.handle();
 
   if (btn_ev != None) {
-    Serial.println(ButtonCtrl::str_from_event(btn_ev));
+    Serial.println(button.str_from_event(btn_ev));
   }
 
   switch (btn_ev) {
