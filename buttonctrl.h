@@ -21,6 +21,9 @@ enum ButtonEvent {
   LongClick = 4,
 };
 
+/**
+ * Helper class for handling (push) buttons on an arduino-compatible board.
+ **/
 template <uint8_t pin,
           uint8_t button_released_signal = LOW,
           uint8_t pin_mode = INPUT>
