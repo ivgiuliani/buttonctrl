@@ -22,8 +22,8 @@ enum ButtonEvent {
 };
 
 template <uint8_t pin,
-          uint8_t pin_mode = INPUT,
-          uint8_t button_released_signal = LOW>
+          uint8_t button_released_signal = LOW,
+          uint8_t pin_mode = INPUT>
 class ButtonCtrl {
 public:
   /**
